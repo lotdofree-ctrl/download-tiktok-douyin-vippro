@@ -22,9 +22,7 @@ jobs:
       run: chmod +x gradlew || true
 
     - name: Build with Gradle
-      run: |
-        export org.gradle.jvmargs="-Xmx2048m -Dfile.encoding=UTF-8"
-        ./gradlew assembleDebug || gradle assembleDebug || true
+      run: ./gradlew assembleDebug || true
 
     - name: Create output directory if needed
       run: |
