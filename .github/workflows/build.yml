@@ -22,14 +22,7 @@ jobs:
       run: chmod +x gradlew || true
 
     - name: Build with Gradle
-      run: ./gradlew assembleDebug || true
-
-    - name: Create output directory if needed
-      run: |
-        mkdir -p app/build/outputs/apk/debug/
-        if [ ! -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
-          echo "Placeholder APK" > app/build/outputs/apk/debug/app-debug.apk
-        fi
+      run: ./gradlew assembleDebug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
